@@ -18,18 +18,18 @@ jobs:
     - name: Login Docker
       uses: docker/login-action@v2
       with:
-        username: ${{ secrets.DOCKER_USERNAME }}
+        username: ${{ secrets.ntp0810 }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and Push Docker image
       run: |
-        docker build -t lephuocbinh123/test-ci-cd:latest .
-        docker push lephuocbinh123/test-ci-cd:latest
+        docker build -t ntp0810/test-ci-cd:latest .
+        docker push ntp0810/test-ci-cd:latest
 
     - name: Trigger Render Deploy
       run: |
         curl -X POST \
-          -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
+          -H "Authorization: Bearer ${{ secrets.1376f3bf-0c9b-4d2f-87b3-96be8b3b97b7 }}" \
           https://api.render.com/v1/services/srv-d45njeje5dus73c9jd20/deploys
 
     # - name: Azure Login
